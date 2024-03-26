@@ -128,7 +128,7 @@ public class Main {
         //throw new UnsupportedOperationException();
         //ArrayList finaldata = [];
         for (int i= 0; i < weatherData.size(); i++){
-            System.out.print (weatherData.get(i).toString());
+            System.out.println(weatherData.get(i).toString());
         }
     }
 
@@ -179,7 +179,7 @@ public class Main {
         try {
             PrintWriter wowprint = new PrintWriter(new FileOutputStream(new File(path), shouldAppend));
             for (int i = 0; i < weatherData.size(); i++)
-                wowprint.write(weatherData.get(i).toString());
+                wowprint.write(weatherData.get(i).toString() + "\n");
             wowprint.close();
 
         }
