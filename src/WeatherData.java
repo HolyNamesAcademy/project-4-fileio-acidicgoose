@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 Holds weather data related to a city
  */
@@ -32,7 +34,9 @@ public class WeatherData implements Comparable<WeatherData> {
     public String toString()
     {
         // remove the line below and implement your function here
-        throw new UnsupportedOperationException();
+       // throw new UnsupportedOperationException();
+        String returnfile = city + ", " + averageTemp + ", " + averageHumidity;
+        return returnfile;
     }
 
     /*
@@ -42,6 +46,28 @@ public class WeatherData implements Comparable<WeatherData> {
     public int compareTo(WeatherData other)
     {
         // remove the line below and implement your function here
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        if(averageTemp==other.getAverageTemp()){
+            if(averageHumidity==other.getAverageHumidity()){
+                return 0; // equal temp and humidity
+            }
+            else if(averageHumidity>other.getAverageHumidity()){
+                return 1; //avg humidity up
+            }
+        }
+        else if(averageTemp> other.getAverageTemp()){
+            return 1; //avg temp upo
+        }
+        return -1; //avg temp down
+
     }
+    /*
+    public int compare(WeatherData o1, WeatherData o2) {
+        return o1.compareTo(o2);
+    }
+    public static <WeatherData extends Comparable<? super WeatherData>> void sort​(ArrayList<WeatherData> list){
+
+    }*/
+
+
 }
